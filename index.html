@@ -1,1278 +1,378 @@
-<!DOCTYPE html><html lang="pt-br"><head>
-  <meta charset="UTF-8">
-  <title>CAPACETE LS2</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- TikTok Pixel Code START -->
-  <script type="text/javascript" async="" src="js/events.js"></script><script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject = t;
-      var ttq = w[t] = w[t] || [];
-      ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"];
-      ttq.setAndDefer = function (t, e) {
-        t[e] = function () {
-          t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
-        }
-      };
-      for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
-      ttq.instance = function (t) {
-        for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++
-        ) ttq.setAndDefer(e, ttq.methods[n]);
-        return e
-      };
-      ttq.load = function (e, n) {
-        var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
-        ttq._i = ttq._i || {};
-        ttq._i[e] = [];
-        ttq._i[e]._u = i;
-        ttq._t = ttq._t || {};
-        ttq._t[e] = +new Date;
-        ttq._o = ttq._o || {};
-        ttq._o[e] = n || {};
-        var o = document.createElement("script");
-        o.type = "text/javascript";
-        o.async = !0;
-        o.src = i + "?sdkid=" + e + "&lib=" + t;
-        var a = document.getElementsByTagName("script")[0];
-        a.parentNode.insertBefore(o, a)
-      };
-      ttq.load('D35422RC77U8E3OS02A0');
-      ttq.page();
-    }(window, document, 'ttq');
-  </script>
-  <!-- TikTok Pixel Code END -->
-
-  <!-- Tailwind -->
-  <script src="3.4.17"></script>
-
-  <!-- Swiper -->
-  <link rel="stylesheet" href="css/swiper-bundle.min.css">
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/feather.min.js"></script>
-
-  <style>
-    body,
-    html {
-      overflow-x: hidden !important;
-    }
-
-
-    .swiper-slide-thumb-active {
-      border: 2px solid #06b6d4;
-      /* cyan-500 */
-      border-radius: 8px;
-    }
-
-    .swiper-pagination {
-      display: none;
-    }
-
-    body {
-      background-color: #fff !important;
-    }
-
-    .reviews-section {
-      padding: 16px;
-    }
-
-    .reviews-header {
-      display: flex;
-      justify-content: between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .reviews-title {
-      font-family: 'TikTokFont', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .reviews-rating {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .rating-big {
-      font-family: 'TikTokDisplayFont', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    .stars {
-      color: #ffc107;
-      font-size: 16px;
-    }
-
-
-    .review-item {
-      border-bottom: 1px solid #f0f0f0;
-      padding: 16px 0;
-    }
-
-    .review-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .review-stars {
-      color: #ffc107;
-      font-size: 14px;
-      margin: 4px 0;
-    }
-
-    .review-variant {
-      color: #666;
-      font-size: 12px;
-      margin-bottom: 8px;
-    }
-
-    .review-text {
-      font-size: 14px;
-      line-height: 1.4;
-      margin-bottom: 12px;
-    }
-
-    .review-images {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-    }
-
-
-    .review-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: default;
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-    }
-
-
-    .review-image {
-      aspect-ratio: 1;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .review-image {
-      aspect-ratio: 1;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .review-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: #ddd;
-    }
-
-    .tab-active::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 100%;
-      background-color: black;
-    }
-  </style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Capacetes - Segurança e Estilo</title>
+    <meta name="description" content="A melhor loja de capacetes com produtos de qualidade, segurança garantida e entrega rápida.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Feather Icons -->
+    <script src="js/feather.min.js"></script>
 </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>CapacetePro</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link">Início</a>
+                    <a href="#products" class="nav-link">Produtos</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#testimonials" class="nav-link">Depoimentos</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="cart-btn">
+                        <i data-feather="shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="menu-toggle">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<body class="bg-gray-100">
-
-  <div id="ewqewqewq" style="border-bottom: solid 0px #8d8d8d40;">
-    <img src="4932e81a-bb72-4840-9d4d-96b9f201a0d4.jfif" style="width: 100%; margin-bottom: 0em;">
-  </div>
-
-
-  <!-- Banner Principal -->
-  <div class="relative">
-    <div class="swiper main-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="images/68929f470fb96_184476-300-300.webp" class="w-full"></div>
-        <div class="swiper-slide"><img src="images/68929f470ff5b_169426-300-300.webp" class="w-full"></div>
-        <div class="swiper-slide"><img src="images/68929f471007a_169565-300-300.webp" class="w-full"></div>
-        <div class="swiper-slide"><img src="images/68929f4710191_169866-300-300.webp" class="w-full"></div>
-        <div class="swiper-slide"><img src="images/68929f4710243_169905-300-300.webp" class="w-full"></div>
-        <div class="swiper-slide"><img src="images/ls2.webp" class="w-full"></div>
-        <div class="swiper-slide"><img src="images/68929f471041e_182966-300-300.webp" class="w-full"></div>
-        <div class="swiper-slide"><img src="images/lss2.webp" class="w-full"></div>
-      </div>
-
-      <!-- Setas -->
-      <div class="swiper-button-next text-white"></div>
-      <div class="swiper-button-prev text-white"></div>
-
-      <!-- Contador -->
-      <div class="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full z-10" id="counter">1/8
-      </div>
-
-      <!-- Bolinhas -->
-      <div class="swiper-pagination !bottom-1 !text-center"></div>
-    </div>
-  </div>
-
-  <!-- Miniaturas -->
-  <div class="px-4 pb-4 pt-2" style="display: none;">
-    <div class="swiper thumb-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide w-16 h-16"><img src="images/68929f470fb96_184476-300-300.webp" class="w-full h-full object-cover rounded"></div>
-        <div class="swiper-slide w-16 h-16"><img src="images/68929f470ff5b_169426-300-300.webp" class="w-full h-full object-cover rounded"></div>
-        <div class="swiper-slide w-16 h-16"><img src="images/68929f471007a_169565-300-300.webp" class="w-full h-full object-cover rounded"></div>
-        <div class="swiper-slide w-16 h-16"><img src="images/68929f4710191_169866-300-300.webp" class="w-full h-full object-cover rounded"></div>
-        <div class="swiper-slide w-16 h-16"><img src="images/68929f4710243_169905-300-300.webp" class="w-full h-full object-cover rounded"></div>
-        <div class="swiper-slide w-16 h-16"><img src="images/lsss2.webp" class="w-full h-full object-cover rounded">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Proteção e Estilo em Primeiro Lugar</h1>
+                    <p>Descubra nossa coleção premium de capacetes com tecnologia avançada, design moderno e máxima segurança para suas aventuras.</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i data-feather="shield-check"></i>
+                            <span>Certificação de Segurança</span>
+                        </div>
+                        <div class="feature">
+                            <i data-feather="truck"></i>
+                            <span>Entrega Rápida</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary">Ver Produtos</button>
+                        <button class="btn btn-secondary">Saiba Mais</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/6892a78fb802c_capacete-norisk-ff302-grand-prix-brazil-brasil-produto-acompanha-viseira-cristal-foto-meramente_908057-5.webp" alt="Capacete Premium" loading="lazy">
+                </div>
+            </div>
         </div>
-        <div class="swiper-slide w-16 h-16"><img src="images/68929f471041e_182966-300-300.webp" class="w-full h-full object-cover rounded"></div>
-        <div class="swiper-slide w-16 h-16"><img src="images/68929f4710511_183021-300-300%20%281%29.webp" class="w-full h-full object-cover rounded"></div>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    .group:hover .group-hover\:text-blue-700 {
-      color: #333;
-    }
-  </style>
-
-  <div class="bg-white mx-auto rounded shadow border border-gray-200 text-[13px]" style="margin-bottom: 0em; border-radius: 0px;">
-
-    <!-- TOPO LARANJA -->
-    <div class="bg-gradient-to-r from-orange-600 to-orange-400 pt-2 pb-1 text-white" style="padding: 1em 1em; padding-bottom: 0em; padding-top: 1.3em;">
-      <div class="flex justify-between items-start">
-        <div class="leading-tight">
-
-          <p class="text-2xl font-bold leading-none" style="display: inline-flex; align-items: center;">R$ 57.90 <svg style="margin-left: 0.3em; margin-top: 0.1em;" fill="none" height="20" viewBox="0 0 18 18" width="20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.25 7.3123V3.5998C2.25 3.42078 2.32112 3.24909 2.4477 3.12251C2.57429 2.99592 2.74598 2.9248 2.925 2.9248H15.075C15.254 2.9248 15.4257 2.99592 15.5523 3.12251C15.6789 3.24909 15.75 3.42078 15.75 3.5998V7.3123C15.3024 7.3123 14.8732 7.49009 14.5568 7.80656C14.2403 8.12303 14.0625 8.55225 14.0625 8.9998C14.0625 9.44736 14.2403 9.87658 14.5568 10.193C14.8732 10.5095 15.3024 10.6873 15.75 10.6873V14.3998C15.75 14.5788 15.6789 14.7505 15.5523 14.8771C15.4257 15.0037 15.254 15.0748 15.075 15.0748H2.925C2.74598 15.0748 2.57429 15.0037 2.4477 14.8771C2.32112 14.7505 2.25 14.5788 2.25 14.3998V10.6873C2.69755 10.6873 3.12677 10.5095 3.44324 10.193C3.75971 9.87658 3.9375 9.44736 3.9375 8.9998C3.9375 8.55225 3.75971 8.12303 3.44324 7.80656C3.12677 7.49009 2.69755 7.3123 2.25 7.3123ZM10.35 4.2748H3.6V6.2782C4.10707 6.5295 4.53384 6.91746 4.83222 7.39834C5.13059 7.87921 5.28869 8.43388 5.28869 8.9998C5.28869 9.56573 5.13059 10.1204 4.83222 10.6013C4.53384 11.0821 4.10707 11.4701 3.6 11.7214V13.7248H10.35V4.2748ZM11.7 4.2748V13.7248H14.4V11.7214C13.8929 11.4701 13.4662 11.0821 13.1678 10.6013C12.8694 10.1204 12.7113 9.56573 12.7113 8.9998C12.7113 8.43388 12.8694 7.87921 13.1678 7.39834C13.4662 6.91746 13.8929 6.5295 14.4 6.2782V4.2748H11.7Z" fill="white"></path>
-            </svg></p>
-
-          <div style="display: inline-flex">
-            <p class="line-through text-sm text-orange-200" style="display: inline-flex; align-items: center!important;">R$ 249.83</p>
-            <p style="margin-left: 0.5em; padding: 0.3em 0.6em; border-radius: 25px; background-color: #fe5d38;">
-              Economize 71%</p>
-          </div>
-
-        </div>
-        <div class="text-xs font-semibold" style="text-transform: uppercase;  text-align: right; width: 70%; display: inline-flex; justify-content: flex-end;">
-          <svg class="h-[1.2em] w-[1.2em]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-          </svg> Oferta Relâmpago
-        </div>
-      </div>
-      <div class="flex justify-between items-center text-xs mt-1" style="margin-top: 0rem;">
-        <p style="visibility: hidden;">Economize até 71%</p>
-        <p id="countdown" class="bg-white text-orange-600 font-bold px-2 py-0.5 rounded text-[11px]" style="text-transform: uppercase; margin-top: -4.2em;">Termina em 00:05:00</p>
-      </div>
-
-      <script>
-        let totalSeconds = 300; // 5 minutos
-
-        function formatTime(seconds) {
-          const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
-          const secs = (seconds % 60).toString().padStart(2, '0');
-          return "Termina em 00:" + mins + ":" + secs;
-        }
-
-        const countdownEl = document.getElementById('countdown');
-        countdownEl.textContent = formatTime(totalSeconds);
-
-        const interval = setInterval(() => {
-          totalSeconds--;
-
-          if (totalSeconds <= 0) {
-            clearInterval(interval);
-            countdownEl.textContent = "Oferta encerrada";
-            countdownEl.classList.remove("text-orange-600");
-            countdownEl.classList.add("text-red-600");
-          } else {
-            countdownEl.textContent = formatTime(totalSeconds);
-          }
-        }, 1000);
-      </script>
-    </div>
-
-    <!-- DESCONTO EXTRA -->
-    <div class="flex gap-2 px-2" style="margin-top: 1em;">
-      <span class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded-full" style="border-radius: 5px;">Economize R$ 191.93</span>
-      <span class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded-full" style="border-radius: 5px;">Economize 71%</span>
-    </div>
-
-    <!-- TÍTULO -->
-    <div class="px-3 pt-3">
-      <p class="text-gray-800 font-medium leading-snug text-[18px]">
-        <span class="promo-do-mes" style="display: inline-block; background: linear-gradient(to right, #f9c2d0, #c2f9f1); padding: 2px 6px; border-radius: 8px; font-weight: bold; font-size: 11px; color: #000; margin-right: 6px;">Promo
-          do Mês</span> CAPACETE LS2
-      </p>
-    </div>
-
-    <!-- AVALIAÇÃO -->
-    <div class="px-3 mt-1 flex items-center gap-1 text-gray-600 text-[12px]">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-500" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 17.27L18.18 21l-1.63-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.45 4.73L5.82 21z"></path>
-      </svg>
-      <span class="font-semibold">4.7</span>
-      <span>(204)</span>
-      <span class="mx-1">•</span>
-      <span>4473 vendidos</span>
-    </div>
-
-    <hr style="margin-top: 1.5em; margin-bottom: 1.5em;">
-
-    <!-- FRETE -->
-    <div class="px-3 mt-3 text-gray-800 text-[16px] flex items-start gap-2">
-      <img src="images/truck-line-2.svg">
-      <div>
-        <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">
-          Frete grátis
-        </span>
-        <p style="display: none;" class="text-gray-600 text-xs" id="entrega">Receba de 24 de set - 24 de set</p>
-        <p class="text-gray-600 text-xs">Receba em até 15 dias</p>
-        <p class="text-gray-400 text-[11px] line-through">Taxa de envio: R$ 9,60</p>
-      </div>
-    </div>
-
-
-    <script>
-      const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
-
-      const hoje = new Date();
-      const amanha = new Date();
-      amanha.setDate(hoje.getDate() + 1);
-
-      const dia = amanha.getDate();
-      const mes = meses[amanha.getMonth()];
-
-      document.getElementById('entrega').innerText = 'Receba de ' + dia + ' de ' + mes + ' - ' + dia + ' de ' + mes + '';
-    </script>
-
-    <!-- DEVOLUÇÃO -->
-    <div class="px-3 mt-3 mb-4 text-gray-800 text-[16px] flex items-start gap-2">
-      <img src="images/shield-check-line-2.svg">
-      <div>
-        <p class="text-gray-600 text-xs leading-tight">
-          Devoluções gratuitas em <strong>30 dias •</strong><br>Cancelamento fácil
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tabs -->
-  <div class="flex border-b border-gray-200 text-sm font-medium space-x-6 mb-4" style="background-color: #fff!important; margin-top: 2em; display: none;">
-    <button class="relative px-4 py-2 text-black font-semibold tab-button tab-active" data-tab="tab1">
-      Visão geral
-    </button>
-    <button class="relative px-4 py-2 text-gray-500 hover:text-black tab-button" data-tab="tab2">
-      Descrição
-    </button>
-  </div>
-
-  <!-- Conteúdo das abas -->
-  <div id="tab1" class="tab-content">
-
-    <div class="max-w-md mx-auto bg-white p-4 rounded shadow" style="display: none;">
-      <div class="flex justify-between font-medium mb-2">
-        <span>Selecionar opções</span>
-        <span class="text-gray-500" style="font-size: 0.8em; color: #000;">Quantidade</span>
-      </div>
-
-      <div id="option-list" class="flex flex-wrap gap-2" style="justify-content: space-evenly;">
-
-        <div class="relative">
-          <!-- Opção ATIVA (disponível) -->
-          <button class="option-btn bg-emerald-400 text-white font-semibold px-4 py-2 rounded-md text-xs shadow" data-status="available">
-            262
-          </button>
-          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gray-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Disponível</span>
-        </div>
-
-        <!-- Opções ESGOTADAS -->
-        <div class="relative">
-          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
-            24
-          </button>
-          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
-        </div>
-
-        <div class="relative">
-          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
-            48
-          </button>
-          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
-        </div>
-
-        <div class="relative">
-          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
-            60
-          </button>
-          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
-        </div>
-
-        <div class="relative">
-          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
-            80
-          </button>
-          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
-        </div>
-
-        <div class="relative">
-          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
-            100
-          </button>
-          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
-        </div>
-      </div>
-
-      <!-- Alerta HTML -->
-      <div id="alert-msg" class="mt-4 text-red-600 text-xs font-medium hidden">
-        Produto esgotado. Escolha uma opção disponível.
-      </div>
-    </div>
-
-    <script>
-      const buttonsx = document.querySelectorAll('.option-btn');
-      const alert = document.getElementById('alert-msg');
-
-      buttonsx.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const status = btn.getAttribute('data-status');
-
-          if (status === 'available') {
-            alert.classList.add('hidden');
-            // Remove seleção anterior
-            buttonsx.forEach(b => b.classList.remove('bg-emerald-400', 'text-white', 'font-semibold', 'shadow'));
-            // Aplica estilo de ativo
-            btn.classList.add('bg-emerald-600', 'text-white', 'font-semibold', 'shadow');
-          } else {
-            alert.classList.remove('hidden');
-          }
-        });
-      });
-    </script>
-
-    <section class="reviews-section" style="background-color: #fff; margin-top: 0em;">
-      <div class="reviews-header" style="margin-top: 0em;">
-        <span class="reviews-title">Avaliações dos clientes (207)</span>
-      </div>
-      <div class="reviews-rating">
-        <span class="rating-big">4.7</span>
-        <span>/5</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-
-      <div class="review-item">
-        <div class="review-header">
-          <div class="review-avatar">
-            <img alt="Lucas Souza" src="images/lucas.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-          </div>
-          <div style="display: flex; flex-direction: column;">
-            <span class="review-name">Lucas Souza</span>
-            <span style="color: #00d4aa!important; font-size: 11px; font-weight: 500;">há 5 horas</span>
-          </div>
-        </div>
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <div class="review-text">Chegou no prazo, capacete de qualidade!!</div>
-        <div class="review-images">
-          <div class="review-image">
-            <img alt="Review photo 1" src="images/6892a699019a1_f8b420519b6182a735bf0292538a89b1.jpg" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
-          </div>
-        </div>
-      </div>
-      <div class="review-item">
-        <div class="review-header">
-          <div class="review-avatar">
-            <img alt=" Joel Lima" src="images/6892a74086352_luis.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-          </div>
-          <div style="display: flex; flex-direction: column;">
-            <span class="review-name"> Joel Lima</span>
-            <span style="color: #00d4aa!important; font-size: 11px; font-weight: 500;">há 3 horas</span>
-          </div>
-        </div>
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <div class="review-text">Comprei meio na dúvida, mas a qualidade surpreendeu</div>
-        <div class="review-images">
-          <div class="review-image">
-            <img alt="Review photo 1" src="images/6892a74086552_422560428804287.jpg" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
-          </div>
-        </div>
-      </div>
-      <div class="review-item">
-        <div class="review-header">
-          <div class="review-avatar">
-            <img alt="Carlos Santos" src="images/6892a78fb7dec_Carlos-Silva.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-          </div>
-          <div style="display: flex; flex-direction: column;">
-            <span class="review-name">Carlos Santos</span>
-            <span style="color: #00d4aa!important; font-size: 11px; font-weight: 500;">há 2 horas</span>
-          </div>
-        </div>
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <div class="review-text">de todos os capacete que tive esse é o melhor</div>
-        <div class="review-images">
-          <div class="review-image">
-            <img alt="Review photo 1" src="images/6892a78fb802c_capacete-norisk-ff302-grand-prix-brazil-brasil-produto-acompanha-viseira-cristal-foto-meramente_908057-5.webp" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
-          </div>
-        </div>
-      </div>
-      <div class="review-item">
-        <div class="review-header">
-          <div class="review-avatar">
-            <img alt=" Fernanda Oliveira" src="images/fernanda.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-          </div>
-          <div style="display: flex; flex-direction: column;">
-            <span class="review-name"> Fernanda Oliveira</span>
-            <span style="color: #00d4aa!important; font-size: 11px; font-weight: 500;">há 1 horas</span>
-          </div>
-        </div>
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <div class="review-text">Chegou no prazo, capacete de qualidade!!</div>
-        <div class="review-images">
-          <div class="review-image">
-            <img alt="Review photo 1" src="images/6892a7c304f7c_994106_capacete-norisk-ff302-monocolor-viseira-solar-preto-fosco_m7_638524304862445187.webp" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align: left; color: #666; margin-top: 1em; margin-bottom: 1em;">
-        <div style="font-size: 16px; margin-bottom: 8px; color: #333;">Avaliações da loja (207)</div>
-        <div id="lones" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px;">
-          <span style="display: flex; align-items: center; gap: 4px; background: #f0f0f0; padding: 6px 10px; border-radius: 16px;">
-            <svg fill="#666" height="14" viewBox="0 0 24 24" width="14">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z">
-              </path>
-            </svg>
-            Inclui imagens ou vídeos(52)
-          </span>
-          <span style="display: flex; align-items: center; gap: 4px; background: #f0f0f0; padding: 6px 10px; border-radius: 16px;">
-            <span style="color: #ffa500;">5</span>
-            <svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-              </path>
-            </svg>
-            (155)
-          </span>
-          <span style="display: flex; align-items: center; gap: 4px; background: #f0f0f0!important; padding: 6px 10px; border-radius: 16px;">
-            <span style="color: #ffa500;">4</span>
-            <svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-              </path>
-            </svg>
-            (22)
-          </span>
-        </div>
-      </div>
-
-      <style>
-        #lones span {
-          font-size: 0.75em;
-          border-radius: 5px !important;
-        }
-      </style>
-
-
     </section>
-  </div>
 
-  <div class="flex items-center justify-between border p-4 rounded w-full max-w-md mx-auto mt-10 bg-white" style="margin-top: -0em; border: solid 10px #dddddd75; border-radius: 0px; border-left: 0px; border-right: 0px;">
-    <div class="flex items-center">
-      <img src="images/68933929d0004_images%20%281%29.png" class="w-12 h-12 rounded-full border" alt="Logo">
-      <div class="ml-3">
-        <p class="font-semibold text-gray-800" style="color: #000; font-weight: 500;">CAPACETE LS2 OFICIAL</p>
-        <p class="text-sm text-gray-500">97 produtos</p>
-      </div>
-    </div>
-    <button style="font-weight: 500; color: #000;" id="seguirBtn" class="bg-gray-100 text-gray-700 px-4 py-1 text-sm rounded hover:bg-gray-200 transition">
-      Seguir
-    </button>
-  </div>
-
-  <script>
-    const seguirBtn = document.getElementById('seguirBtn');
-    const key = 'seguiu_karla_bella';
-
-    // Carrega estado do localStorage
-    if (localStorage.getItem(key) === '1') {
-      seguirBtn.textContent = 'Seguindo';
-      seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
-      seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
-    }
-
-    seguirBtn.addEventListener('click', () => {
-      const seguindo = localStorage.getItem(key) === '1';
-
-      if (seguindo) {
-        localStorage.removeItem(key);
-        seguirBtn.textContent = 'Seguir';
-        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
-        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
-      } else {
-        localStorage.setItem(key, '1');
-        seguirBtn.textContent = 'Seguindo';
-        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
-        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
-      }
-    });
-  </script>
-
-  <div id="tab2" class="tab-content">
-    <div class="space-y-6 text-gray-800 text-sm leading-relaxed" style="padding: 1em;">
-      CAPACETE LS2.
-
-      Características:
-      Aqui na LS2, não seguimos o óbvio, criamos nosso próprio caminho. Então, quando dizemos que somos "descolados", é
-      um compromisso com a mudança e a evolução constante. Estamos aqui para garantir a segurança dos nossos #ls2. Bora
-      fazer barulho no mundo motociclista #wemakenoise.
-      Há muitos novos caminhos para percorrer com a sua moto e, naturalmente, você precisa de praticidade em suas
-      aventuras. Por isso, a LS2 desenvolveu o Route, uma nova proposta
-      "Feito para quem passa muito tempo com a moto" – Destaca o conforto e a leveza dos capacetes LS2, ideais para
-      longas jornadas.
-    </div>
-  </div>
-
-  <footer class="bg-white mx-auto rounded shadow p-4 text-sm" style="padding-bottom: 6em; border-bottom: solid 0px; margin-top: 1em;">
-    <!-- Dropdown Items -->
-    <div class="space-y-2">
-      <details class="group border-b pb-2">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">
-          Start shopping <span>▾</span>
-        </summary>
-        <ul class="mt-2 text-gray-600 space-y-1">
-          <li><a href="">Best sellers</a></li>
-          <li><a href="">New arrivals</a></li>
-        </ul>
-      </details>
-
-      <details class="group border-b pb-2">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">
-          Make money with us <span>▾</span>
-        </summary>
-        <ul class="mt-2 text-gray-600 space-y-1">
-          <li><a href="">Affiliate</a></li>
-          <li><a href="">Creator program</a></li>
-        </ul>
-      </details>
-
-      <details class="group border-b pb-2">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">
-          Company Info <span>▾</span>
-        </summary>
-        <ul class="mt-2 text-gray-600 space-y-1">
-          <li><a href="">About us</a></li>
-          <li><a href="">Careers</a></li>
-        </ul>
-      </details>
-
-      <details class="group border-b pb-2">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">
-          Customer support <span>▾</span>
-        </summary>
-        <ul class="mt-2 text-gray-600 space-y-1">
-          <li><a href="">Help Center</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-      </details>
-
-      <details class="group border-b pb-2">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">
-          Policy and legal <span>▾</span>
-        </summary>
-        <ul class="mt-2 text-gray-600 space-y-1">
-          <li><a href="">Privacy Policy</a></li>
-          <li><a href="">Terms of Use</a></li>
-        </ul>
-      </details>
-
-    </div>
-
-    <!-- Bottom Icons -->
-    <div class="mt-4 pt-3 text-xs text-gray-600 space-y-2">
-      <div class="flex items-center justify-between">
-        <span>🚚 Free shipping</span>
-        <span>🎁 New customer deals</span>
-      </div>
-      <div class="flex items-center justify-between mt-2">
-        <img src="images/Google_Play_Store_badge_EN.svg" class="w-24" alt="Google Play">
-        <img src="images/download-on-the-app-store.svg" class="w-24" alt="App Store">
-      </div>
-    </div>
-  </footer>
-
-  <!-- Footer Fixo -->
-  <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-md px-4 py-2 flex items-center justify-between z-50">
-    <!-- Ícones lado esquerdo -->
-    <div class="flex items-center gap-6">
-      <!-- Loja -->
-      <div class="flex flex-col items-center text-xs text-gray-600">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mb-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3"></path>
-        </svg>
-        Loja
-        <!-- Loja -->
-      </div>
-
-      <!-- Chat -->
-      <div class="flex flex-col items-center text-xs text-gray-600">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mb-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-3.39-.57l-4.5 1.07 1.08-3.24C4.37 15.93 3 14.08 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-          </path>
-        </svg>
-        Chat
-        <!-- Chat -->
-      </div>
-    </div>
-
-    <!-- Botões lado direito -->
-    <div class="flex gap-2" style="display: contents;">
-      <button class="bg-gray-100 text-black px-4 py-1.5 text-sm rounded-full font-medium" style="border-radius: 10px;">
-        Reviews do<br>produto
-      </button>
-
-      <!-- BOTÃO -->
-      <a onclick="abrirModal()" class="cursor-pointer bg-rose-500 text-white px-4 py-1.5 text-sm rounded-full font-semibold shadow-md" style="text-transform: uppercase; font-weight: bold; border-radius: 10px; text-align: center; line-height: 3em;">
-        Comprar Agora
-      </a>
-    </div>
-  </div>
-
-  <style type="text/css">
-    .swiper-button-next,
-    .swiper-button-prev {
-      display: none !important;
-    }
-  </style>
-
-  <!-- MODAL -->
-  <div id="meuModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50 hidden">
-    <div class="bg-white p-4 rounded-t-lg w-full max-w-md relative shadow-lg" style="overflow-y: auto; max-height: 70%;">
-      <!-- BOTÃO FECHAR -->
-      <button onclick="fecharModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-xl font-bold">×</button>
-      <br>
-
-      <!-- Comece a colar aqui -->
-      <!-- Bloco de seleção de numeração de capacete -->
-      <style>
-        .helmet-size {
-          font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-          max-width: 520px;
-          margin: 12px auto;
-          border: 1px solid #e6e6e6;
-          padding: 16px;
-          border-radius: 12px;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-          background: #fff;
-        }
-
-        .helmet-size h3 {
-          margin: 0 0 10px 0;
-          font-size: 18px;
-          color: #111;
-        }
-
-        .size-controls {
-          display: flex;
-          gap: 12px;
-          flex-wrap: wrap;
-          align-items: center;
-        }
-
-        .quick-sizes {
-          display: flex;
-          gap: 8px;
-          flex-wrap: wrap;
-        }
-
-        .quick-sizes button {
-          border: 1px solid #d0d0d0;
-          padding: 6px 10px;
-          border-radius: 8px;
-          background: #fafafa;
-          cursor: pointer;
-          min-width: 56px;
-          font-weight: 600;
-        }
-
-        .quick-sizes button.active {
-          background: #1f2937;
-          color: white;
-          border-color: #1f2937;
-        }
-
-        .select-size {
-          display: flex;
-          gap: 8px;
-          align-items: center;
-          margin-left: auto;
-        }
-
-        .select-size select {
-          padding: 8px 10px;
-          border-radius: 8px;
-          border: 1px solid #dcdcdc;
-          background: white;
-        }
-
-        .info-row {
-          display: flex;
-          gap: 12px;
-          margin-top: 12px;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .size-display {
-          font-weight: 700;
-          font-size: 16px;
-        }
-
-        .chart-btn {
-          background: transparent;
-          border: none;
-          color: #2563eb;
-          cursor: pointer;
-          text-decoration: underline;
-          padding: 4px;
-        }
-
-        /* modal (tabela de tamanhos) */
-        .modal-backdrop {
-          position: fixed;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.45);
-          display: none;
-          align-items: center;
-          justify-content: center;
-          z-index: 1200;
-        }
-
-        .modal {
-          background: white;
-          border-radius: 12px;
-          max-width: 560px;
-          width: 92%;
-          padding: 18px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-        }
-
-        .size-table {
-          width: 100%;
-          border-collapse: collapse;
-          margin-top: 8px;
-        }
-
-        .size-table th,
-        .size-table td {
-          border: 1px solid #efefef;
-          padding: 8px 10px;
-          text-align: center;
-        }
-
-        .close-modal {
-          background: #ef4444;
-          color: white;
-          border: none;
-          padding: 8px 12px;
-          border-radius: 8px;
-          cursor: pointer;
-          float: right;
-        }
-
-        @media (max-width: 420px) {
-          .size-controls {
-            flex-direction: column;
-            align-items: stretch;
-          }
-
-          .select-size {
-            margin-left: 0;
-            justify-content: space-between;
-          }
-        }
-      </style>
-
-      <div class="helmet-size" id="helmet-size-widget" aria-labelledby="helmet-size-title">
-        <h3 id="helmet-size-title">Escolha a numeração do seu capacete</h3>
-
-        <!-- Form wrapper: se já tiver um form, remova este form e integre os inputs -->
-        <form id="helmet-size-form" onsubmit="event.preventDefault();">
-          <div class="size-controls">
-            <div>
-              <div style="font-size:13px;color:#555;margin-bottom:6px;">Tamanhos rápidos (cm)</div>
-              <div class="quick-sizes" role="list" aria-label="Tamanhos rápidos">
-                <!-- botões rápidos -->
-                <button type="button" class="size-btn" data-size="54" aria-pressed="false">54</button>
-                <button type="button" class="size-btn" data-size="56" aria-pressed="false">56</button>
-                <button type="button" class="size-btn" data-size="58" aria-pressed="false">58</button>
-                <button type="button" class="size-btn" data-size="60" aria-pressed="false">60</button>
-                <button type="button" class="size-btn" data-size="62" aria-pressed="false">62</button>
-              </div>
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Produtos</h2>
+                <p>Capacetes de alta qualidade para todos os estilos e necessidades</p>
+            </div>
+            
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="sport">Esportivo</button>
+                <button class="filter-btn" data-filter="urban">Urbano</button>
+                <button class="filter-btn" data-filter="premium">Premium</button>
             </div>
 
-            <div class="select-size" aria-hidden="false">
-              <label for="helmet-size-select" style="font-size:13px;color:#555;">Ou escolha a numeração</label>
-              <select id="helmet-size-select" aria-label="Selecionar numeração do capacete">
-                <option value="">Selecionar...</option>
-                <!-- lista numérica comum (cm). Ajuste conforme seu catálogo -->
-                <option value="48">48</option>
-                <option value="50">50</option>
-                <option value="52">52</option>
-                <option value="54">54</option>
-                <option value="55">55</option>
-                <option value="56">56</option>
-                <option value="57">57</option>
-                <option value="58">58</option>
-                <option value="59">59</option>
-                <option value="60">60</option>
-                <option value="61">61</option>
-                <option value="62">62</option>
-                <option value="63">63</option>
-                <option value="64">64</option>
-                <option value="65">65</option>
-                <option value="66">66</option>
-              </select>
+            <div class="products-grid">
+                <div class="product-card" data-category="premium">
+                    <div class="product-image">
+                        <img src="images/6892a78fb802c_capacete-norisk-ff302-grand-prix-brazil-brasil-produto-acompanha-viseira-cristal-foto-meramente_908057-5.webp" alt="Capacete NoRisk FF302" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary add-to-cart" data-id="1">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>NoRisk FF302 Grand Prix</h3>
+                        <p class="product-description">Capacete premium com viseira cristal e design esportivo</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 299,90</span>
+                            <span class="original-price">R$ 399,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span>(127 avaliações)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="urban">
+                    <div class="product-image">
+                        <img src="images/6892a7c304f7c_994106_capacete-norisk-ff302-monocolor-viseira-solar-preto-fosco_m7_638524304862445187.webp" alt="Capacete NoRisk Monocolor" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary add-to-cart" data-id="2">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>NoRisk FF302 Monocolor</h3>
+                        <p class="product-description">Capacete urbano com viseira solar e acabamento fosco</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 249,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span>(89 avaliações)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sport">
+                    <div class="product-image">
+                        <img src="images/ls2.webp" alt="Capacete LS2" loading="lazy">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary add-to-cart" data-id="3">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>LS2 Sport Racing</h3>
+                        <p class="product-description">Capacete esportivo para alta performance</p>
+                        <div class="product-price">
+                            <span class="current-price">R$ 399,90</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span>(203 avaliações)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="info-row">
-            <div class="size-display" id="selected-size" aria-live="polite">Nenhuma numeração selecionada</div>
-            <div>
-
-            </div>
-          </div>
-          <!-- input oculto que você pode enviar junto ao form do site -->
-          <input type="hidden" name="helmet_size" id="helmet_size_input" value="">
-        </form>
-      </div>
-
-      <!-- Modal com tabela de conversão -->
-      <div class="modal-backdrop" id="size-modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal" role="document" aria-labelledby="modal-title">
-          <div style="margin-top:12px;">
-
-          </div>
         </div>
-      </div>
+    </section>
 
-      <script>
-        (function () {
-          const quickButtons = document.querySelectorAll('.size-btn');
-          const select = document.getElementById('helmet-size-select');
-          const display = document.getElementById('selected-size');
-          const hiddenInput = document.getElementById('helmet_size_input');
-          const form = document.getElementById('helmet-size-form');
-          const openChartBtn = document.getElementById('open-chart');
-          const modal = document.getElementById('size-modal');
-          const closeModalBtn = document.getElementById('close-modal');
-          let current = '';
-
-          function updateSelection(val, source) {
-            if (!val) {
-              current = '';
-              display.textContent = 'Nenhuma numeração selecionada';
-              hiddenInput.value = '';
-              // clear active
-              quickButtons.forEach(b => b.classList.remove('active'));
-              quickButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
-              select.value = '';
-              return;
-            }
-
-            current = String(val);
-            display.textContent = 'Numeração selecionada: ' + current + ' cm';
-            hiddenInput.value = current;
-            // sync UI
-            quickButtons.forEach(b => {
-              if (b.dataset.size === current) {
-                b.classList.add('active');
-                b.setAttribute('aria-pressed', 'true');
-              } else {
-                b.classList.remove('active');
-                b.setAttribute('aria-pressed', 'false');
-              }
-            });
-            // set select if exists that value
-            const opt = Array.from(select.options).find(o => o.value === current);
-            if (opt) select.value = current;
-          }
-
-          quickButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-              const size = btn.dataset.size;
-              updateSelection(size, 'quick');
-            });
-          });
-
-          select.addEventListener('change', () => {
-            updateSelection(select.value || '', 'select');
-          });
-
-          // abrir modal
-          openChartBtn.addEventListener('click', () => {
-            modal.style.display = 'flex';
-            modal.setAttribute('aria-hidden', 'false');
-            // foco acessível
-            closeModalBtn.focus();
-          });
-
-          closeModalBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-            modal.setAttribute('aria-hidden', 'true');
-            openChartBtn.focus();
-          });
-
-          // fechar modal com ESC
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.style.display === 'flex') {
-              modal.style.display = 'none';
-              modal.setAttribute('aria-hidden', 'true');
-              openChartBtn.focus();
-            }
-          });
-
-          // Submissão: aqui você pode integrar com sua lógica
-          form.addEventListener('submit', () => {
-            if (!current) {
-              alert('Por favor selecione a numeração do capacete antes de confirmar.');
-              return;
-            }
-            // Exemplo: enviar via AJAX ou apenas mostrar confirmação
-            // Se você quer submeter ao form pai, remova preventDefault no form acima
-            alert('Numeração confirmada: ' + current + ' cm\n(O input oculto "helmet_size" está preenchido para envio em formulários.)');
-          });
-
-          // inicializa (opcional)
-          updateSelection('', '');
-        })();
-      </script>
-      <!-- Fim do bloco -->
-      <br>
-      <br>
-
-      <div style="display: inline-flex;">
-        <div style="width: 40%; margin-right: 1em;">
-          <!-- IMAGEM -->
-          <img src="images/68929f470fb96_184476-300-300.webp" alt="Produto" class="w-full rounded-md mb-4 shadow-sm" id="img-solts">
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre Nossa Loja</h2>
+                    <p>Há mais de 10 anos no mercado, somos especialistas em equipamentos de proteção individual para motociclistas. Nossa missão é oferecer produtos de alta qualidade que garantam sua segurança sem abrir mão do estilo.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Anos de Experiência</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50k+</h3>
+                            <p>Clientes Satisfeitos</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100+</h3>
+                            <p>Modelos Disponíveis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/6892a699019a1_f8b420519b6182a735bf0292538a89b1.jpg" alt="Nossa loja" loading="lazy">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div style="width: 50%; text-align: left;">
-          <!-- TÍTULO -->
-          <h2 id="div_ors_1" style="display: none;" class="text-lg font-semibold text-center text-gray-800 mb-1">
-            CAPACETE N0RlSK</h2>
-
-          <!-- PREÇO ATUAL -->
-          <p id="div_ors_3" style="font-weight: 500; text-align: left;" class="text-center text-2xl font-extrabold text-rose-600 mb-1">R$ 57.90</p>
-
-          <!-- PREÇO ANTIGO -->
-          <p style="text-align: left;" class="text-center text-sm text-gray-500 line-through mb-1"><span id="div_ors_2">R$ 249.83</span> <span id="div_ors_5" class="inline-block bg-rose-100 text-rose-600 text-xs font-semibold px-2 py-1 rounded">- 71%</span></p>
-
-          <!-- DESCONTO -->
-          <p style="display: none;" class="text-center text-xs text-green-600 font-bold mb-4">Desconto de 71%</p>
-
-          <span class="inline-block bg-green-100 text-green-600 text-xs font-semibold px-2 py-1 rounded">
-            Frete grátis
-          </span>
-
-
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <p>Depoimentos reais de quem confia na nossa qualidade</p>
+            </div>
+            
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Excelente qualidade! O capacete chegou rapidamente e superou minhas expectativas. Recomendo!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/6892a74086352_luis.jpg" alt="Luis" loading="lazy">
+                                <div class="author-info">
+                                    <h4>Luis Silva</h4>
+                                    <span>Cliente verificado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Atendimento excepcional e produtos de primeira linha. Já comprei 3 capacetes aqui!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/fernanda.jpg" alt="Fernanda" loading="lazy">
+                                <div class="author-info">
+                                    <h4>Fernanda Costa</h4>
+                                    <span>Cliente verificado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Melhor custo-benefício do mercado. Capacete resistente e bonito!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/6892a78fb7dec_Carlos-Silva.jpg" alt="Carlos" loading="lazy">
+                                <div class="author-info">
+                                    <h4>Carlos Mendes</h4>
+                                    <span>Cliente verificado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-      </div>
+    </section>
 
-
-      <br>
-
-      <div class="helmet-size" id="helmet-size-widget" aria-labelledby="helmet-size-title">
-        <h3 id="helmet-size-title">Escolha o modelo do seu capacete</h3>
-
-        <div class="chatsw" style="margin-top: 1em; margin-bottom: 1em; ">
-          <h3 class="text-lg font-bold mb-2">Modelos</h3>
-          <div class="grid grid-cols-3 md:grid-cols-3 gap-3">
-            <div style="display: inline-flex; width: 100%; align-items: center; justify-content: center; color: #333;" onclick="selecionarVariacao(this, 'cor')" class="p-4 border rounded bg-white shadow text-sm cursor-pointer transition-all hover:shadow-md group" data-tipo="cor" data-titulo="CAPACETE LS2" data-preco="57,90" data-preco_comparacao="249,83" data-desconto="71" data-link="https://checkout.tik-tok-shop.site/checkout?product=9752389b-980b-11f0-b47c-46da4690ad53" data-img="var_6892a0ed15312.webp">
-
-              <p class="font-bold text-gray-700 group-hover:text-blue-700 mb-1">CAPACETE LS2 CLASSIC TANK ROXO</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>Estamos aqui para ajudar você a encontrar o capacete perfeito</p>
             </div>
-            <div style="display: inline-flex; width: 100%; align-items: center; justify-content: center; color: #333;" onclick="selecionarVariacao(this, 'cor')" class="p-4 border rounded bg-white shadow text-sm cursor-pointer transition-all hover:shadow-md group" data-tipo="cor" data-titulo="CAPACETE LS2" data-preco="57,90" data-preco_comparacao="249,83" data-desconto="71" data-link="https://checkout.tik-tok-shop.site/checkout?product=a6b2b217-980b-11f0-b47c-46da4690ad53" data-img="var_6892a20b4a5ec.webp">
-
-              <p class="font-bold text-gray-700 group-hover:text-blue-700 mb-1">CAPACETE LS2 CLASSIC DRAZE BRANCO</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i data-feather="map-pin"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua das Motos, 123<br>Centro, São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-feather="phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 9999-9999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-feather="mail"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contato@capacetepro.com.br</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
             </div>
-            <div style="display: inline-flex; width: 100%; align-items: center; justify-content: center; color: #333;" onclick="selecionarVariacao(this, 'cor')" class="p-4 border rounded bg-white shadow text-sm cursor-pointer transition-all hover:shadow-md group" data-tipo="cor" data-titulo="CAPACETE LS2" data-preco="57,90" data-preco_comparacao="249,83" data-desconto="71" data-link="https://checkout.tik-tok-shop.site/checkout?product=b66e99d3-980b-11f0-b47c-46da4690ad53" data-img="var_6892a2a5ea088.webp">
-
-              <p class="font-bold text-gray-700 group-hover:text-blue-700 mb-1">CAPACETE LS2 CLASSIC DRAZE VERMELHO</p>
-            </div>
-            <div style="display: inline-flex; width: 100%; align-items: center; justify-content: center; color: #333;" onclick="selecionarVariacao(this, 'cor')" class="p-4 border rounded bg-white shadow text-sm cursor-pointer transition-all hover:shadow-md group" data-tipo="cor" data-titulo="CAPACETE LS2" data-preco="57,90" data-preco_comparacao="249,83" data-desconto="71" data-link="https://checkout.tik-tok-shop.site/checkout?product=c4627ff7-980b-11f0-b47c-46da4690ad53" data-img="var_6892a3772a432.webp">
-
-              <p class="font-bold text-gray-700 group-hover:text-blue-700 mb-1">CAPACETE LS2 CLASSIC DRAZE PRETO</p>
-            </div>
-            <div style="display: inline-flex; width: 100%; align-items: center; justify-content: center; color: #333;" onclick="selecionarVariacao(this, 'cor')" class="p-4 border rounded bg-white shadow text-sm cursor-pointer transition-all hover:shadow-md group" data-tipo="cor" data-titulo="CAPACETE LS2" data-preco="57,90" data-preco_comparacao="249,83" data-desconto="71" data-link="https://checkout.tik-tok-shop.site/checkout?product=db59d998-980b-11f0-b47c-46da4690ad53" data-img="var_6892a3deb90e0.webp">
-
-              <p class="font-bold text-gray-700 group-hover:text-blue-700 mb-1">CAPACETE LS2 CLASSIC DRAZE VERDE</p>
-            </div>
-            <div style="display: inline-flex; width: 100%; align-items: center; justify-content: center; color: #333;" onclick="selecionarVariacao(this, 'cor')" class="p-4 border rounded bg-white shadow text-sm cursor-pointer transition-all hover:shadow-md group" data-tipo="cor" data-titulo="CAPACETE LS2" data-preco="57,90" data-preco_comparacao="249,83" data-desconto="71" data-link="https://checkout.tik-tok-shop.site/checkout?product=1cdc8885-980c-11f0-b47c-46da4690ad53" data-img="68929f471041e_182966-300-300.webp">
-
-              <p class="font-bold text-gray-700 group-hover:text-blue-700 mb-1">CAPACETE LS2 CLASSIC MONOCOLOR NARDO
-                GREY</p>
-            </div>
-          </div>
-          <!-- VARIACAO_2 -->
-          <script>
-            function selecionarVariacao(el, tipo) {
-              // 1. Remove destaque dos outros do mesmo tipo
-              document.querySelectorAll(`[data-tipo='${tipo}']`).forEach(item => {
-                item.classList.remove('border-rose-600', 'ring-2', 'ring-rose-300');
-              });
-
-              // 2. Adiciona destaque ao atual
-              el.classList.add('border-rose-600', 'ring-2', 'ring-rose-300');
-
-              console.log(el.dataset.img);
-
-              // 3. Pega os dados
-              const titulo = el.dataset.titulo;
-              const preco = el.dataset.preco;
-              const preco_comparacao = el.dataset.preco_comparacao;
-              const desconto = el.dataset.desconto;
-              const link = el.dataset.link;
-
-              // 4. Atualiza as divs (ajuste os IDs conforme sua estrutura real)
-              const div1 = document.getElementById('div_ors_1');
-              const div2 = document.getElementById('div_ors_3');
-              const div3 = document.getElementById('div_ors_2');
-              const div4 = document.getElementById('div_ors_5');
-              const div5 = document.getElementById('div_ors_4'); // opcional para atualizar href
-              const div6 = document.getElementById('img-solts'); // opcional para atualizar href
-
-
-
-              if (div1) div1.innerText = titulo;
-              if (div2) div2.innerText = 'R$ ' + preco;
-              if (div3) div3.innerText = 'R$ ' + preco_comparacao;
-              if (div4) div4.innerText = "" + desconto + "%";
-              if (div5) div5.href = link;
-              if (div6) {
-                const candidate = "images/" + el.dataset.img;
-                const options = Array.from(document.querySelectorAll("[data-tipo='" + tipo + "']"));
-                const optionIndex = Math.max(0, options.indexOf(el));
-                const slideImgs = Array.from(document.querySelectorAll('.main-swiper .swiper-slide img'));
-                const fallbackSrc = (slideImgs[optionIndex] && slideImgs[optionIndex].getAttribute('src')) || 'images/68929f470fb96_184476-300-300.webp';
-                div6.onerror = function () { this.onerror = null; this.src = fallbackSrc; };
-                div6.src = candidate;
-              }
-            }
-          </script>
-
-
-
-          <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const comprarBtn = document.getElementById("div_ors_4");
-
-              if (comprarBtn) {
-                comprarBtn.addEventListener("click", function (event) {
-                  // Tenta obter o content_id a partir do link do botão (href)
-                  const contentId = comprarBtn.getAttribute("href") || 'produto-sem-id';
-
-                  // Envia o evento para o Pixel do TikTok
-                  if (typeof ttq !== "undefined") {
-                    ttq.track('AddToCart', {
-                      content_id: contentId
-                    });
-                    console.log('Evento AddToCart enviado com content_id:', contentId);
-                  }
-                });
-              }
-            });
-          </script>
-
-
         </div>
-        <div style="display: block; width: 100%; margin-top: 0.5em;">
-          <a href="" id="div_ors_4" style="width: 100%; text-align: center; display: block;" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 rounded">Comprar Agora</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CapacetePro</h3>
+                    <p>Sua segurança é nossa prioridade. Oferecemos os melhores capacetes do mercado com garantia de qualidade.</p>
+                    <div class="app-downloads">
+                        <img src="images/Google_Play_Store_badge_EN.svg" alt="Google Play" loading="lazy">
+                        <img src="images/download-on-the-app-store.svg" alt="App Store" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#products">Produtos</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categorias</h4>
+                    <ul>
+                        <li><a href="#">Capacetes Esportivos</a></li>
+                        <li><a href="#">Capacetes Urbanos</a></li>
+                        <li><a href="#">Capacetes Premium</a></li>
+                        <li><a href="#">Acessórios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Política de Troca</a></li>
+                        <li><a href="#">Garantia</a></li>
+                        <li><a href="#">Suporte</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CapacetePro. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="#"><i data-feather="facebook"></i></a>
+                    <a href="#"><i data-feather="instagram"></i></a>
+                    <a href="#"><i data-feather="twitter"></i></a>
+                    <a href="#"><i data-feather="youtube"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Carrinho de Compras</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <strong>Total: R$ <span id="cart-total">0,00</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="clear-cart">Limpar Carrinho</button>
+                <button class="btn btn-primary" id="checkout">Finalizar Compra</button>
+            </div>
+        </div>
     </div>
 
-    <style>
-      .chatsw div {
-        text-align: center;
-      }
-    </style>
-
-
-    <!-- SCRIPT -->
+    <!-- Scripts -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
     <script>
-      function abrirModal() {
-        document.getElementById('meuModal').classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // impede rolagem
-      }
-
-      function fecharModal() {
-        document.getElementById('meuModal').classList.add('hidden');
-        document.body.style.overflow = ''; // libera rolagem
-      }
+        // Initialize Feather Icons
+        feather.replace();
     </script>
-
-
-
-    <script>
-      // const buttons = document.querySelectorAll('.tab-button');
-      // const contents = document.querySelectorAll('.tab-content');
-
-      // buttons.forEach(btn => {
-      //   btn.addEventListener('click', () => {
-      //     // Remove ativo de todos
-      //     buttons.forEach(b => {
-      //       b.classList.remove('text-black', 'font-semibold', 'tab-active');
-      //       b.classList.add('text-gray-500');
-      //     });
-      //     contents.forEach(c => c.classList.add('hidden'));
-
-      //     // Ativa selecionado
-      //     btn.classList.remove('text-gray-500');
-      //     btn.classList.add('text-black', 'font-semibold', 'tab-active');
-      //     document.getElementById(btn.dataset.tab).classList.remove('hidden');
-      //   });
-      // });
-    </script>
-
-    <script>
-      const thumbSwiper = new Swiper(".thumb-swiper", {
-        spaceBetween: 10,
-        slidesPerView: 5,
-        freeMode: true,
-        watchSlidesProgress: true,
-      });
-
-      const mainSwiper = new Swiper(".main-swiper", {
-        loop: false,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        thumbs: {
-          swiper: thumbSwiper,
-        },
-        on: {
-          slideChange: function () {
-            document.getElementById("counter").textContent = (mainSwiper.realIndex + 1).toString() + "/" + 8;
-          }
-        }
-      });
-    </script>
-
-    <script>
-      feather.replace();
-    </script>
-
-  </div>
-
-
-</body></html>
+</body>
+</html>
